@@ -6,11 +6,12 @@ module.exports = function towelSort(matrix) {
 	const result = [];
 
 	for (let i = 0; i < matrix.length; i++){
-	
-			matrix[i].sort((a, b) => a - b);}
+		if (i == 0 || i % 2 == 0) {
+			matrix[i].sort((a, b) => a - b);
+		} else matrix[i].sort((a, b) => b - a);
 
 		matrix[i].forEach((el) => result.push(el));
-	
+	}
 
 	return result;
 	
